@@ -1,0 +1,75 @@
+
+/*body { background: #02c2ae !important;
+ }*/
+ /*.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #02e3cd;
+}*/
+#sideDiv{
+  float: left;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+#container{
+  padding: 10px;
+}
+#info{
+  background-color: #02cab6;
+}
+/*#csricodexmlab{
+  background-color: #02cab6;
+
+}*/
+
+h2 {
+  color : gray;
+  foont-size: .8em;
+  background-color: lightblue;
+}
+/*.div{
+  width: 500px;
+  height: 200px;
+  background-color: lightgreen;
+  padding: 10px;
+}*/
+
+#heading{
+  text-align: center;
+  font-family: sans-serif;
+}
+#heading2{
+  font-family: sans-serif;
+  background-color: green;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+.para {
+  font-family: sans-serif;
+}
+/*
+#output{
+  padding: 10px;
+  background-color: lightblue;
+  width: 500px;
+  position:absolute;
+  top: 250px;
+  left: 50%;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+
+}
+table {
+    /*border: 1px solid black;*/
+    /*border-collapse: collapse;*/
+    background-color: lightgreen !important;
+    font-family: sans-serif;
+    text-align: left;
+    padding: 10px;
+}
