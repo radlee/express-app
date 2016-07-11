@@ -46,7 +46,9 @@ app.get('/sales/:week_name', function(req, res){
 });
 
 //start the server
-var server = app.listen(5000, function () {
+var port = process.env.PORT || 5000;
+
+var server = app.listen(port, function () {
  var host = server.address().address;
  var port = server.address().port;
  console.log('App listening at http://%s:%s', host, port);
