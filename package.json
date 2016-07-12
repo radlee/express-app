@@ -1,17 +1,23 @@
 {
   "name": "express-app",
   "version": "1.0.0",
+  "description": "Solving Nelisa's problem of wanting to be able to buy in bulk by helping her understand what she needs to buy and how much of that.",
   "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radlee/express-app.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
+  "bugs": {
+    "url": "https://github.com/radlee/express-app/issues"
   },
-  "engines": {
-    "node": "6.3.0"
-  }
+  "homepage": "https://github.com/radlee/express-app#readme"
+}
