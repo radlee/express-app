@@ -1,7 +1,6 @@
-var express = require('express');
 var fs = require("fs");
+var express = require('express');
 var exphbs = require("express-handlebars");
-var handlebars = require('handlebars');
 var app = express();
 
 var readAndMakeObjects = require("./Modules/readAndMakeObjects");
