@@ -39,5 +39,6 @@ module.exports = function(file){
       });
     }
     sortTheArray(salesMadePerWeek)
+    console.log(salesMadePerWeek);
     return salesMadePerWeek;
 }

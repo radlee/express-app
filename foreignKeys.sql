@@ -1,0 +1,19 @@
+USE Nelisa;
+
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS Categories;
+DROP TABLE IF EXISTS Products;
+-- SET FOREIGN_KEY_CHECKS=1;
+
+CREATE TABLE Categories(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  Category char(100) NOT NULL
+);
+
+CREATE TABLE Products(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  Product char(100) NOT NULL,
+  CategoryID INT,
+  FOREIGN KEY (CategoryID) REFERENCES Categories (id)
+);
+SELECT * FROM Products;

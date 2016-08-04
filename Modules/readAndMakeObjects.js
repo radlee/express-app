@@ -9,7 +9,7 @@ module.exports = function(file, path){
     var splittedLine = line.split(",");
     list.push(splittedLine);
     var result = {
-      Day : splittedLine[0],
+      // Day : splittedLine[0],
       Date : splittedLine[1],
       Item : splittedLine[2],
       Quantity : Number(splittedLine[3]),
