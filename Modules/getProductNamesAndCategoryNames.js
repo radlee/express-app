@@ -1,59 +1,59 @@
 module.exports = function(arrayOfCats){
-  var productNamesAndCategoryNames ={};
+  var productNamesAndCategoryNames = [];
   arrayOfCats.forEach(function(item){
     if(item.Item == "Amasi"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+     productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category , Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Milk 1l"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Cream Soda 500ml"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Bananas - loose"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Soap Bar"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Shampoo 1 litre"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Mixed Sweets 5s"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Top Class Soy Mince"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Apples - loose"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Chakalaka Can"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Gold Dish Vegetable Curry Can"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Iwisa Pap 5kg"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Coke 500ml"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Fanta 500ml"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Heart Chocolates"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Valentine Cards"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Rose (plastic)"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
     if(item.Item == "Bread"){
-     productNamesAndCategoryNames[item.Item] = item.Category;
+      productNamesAndCategoryNames.push({Product : item.Item, Category : item.Category, Date : item.Date, Quantity : item.Quantity, Price : item.Price});
     }
   })
   return productNamesAndCategoryNames;

@@ -11,51 +11,48 @@ var connection = mysql.createConnection({
   database : "Nelisa"
 });
 // connection.connect();
-var listOfObjects = readAndMakeObjects("./files/Week1.csv");
-var arrayOfCategories = getCategories(listOfObjects);
+var mapOfProducts = readAndMakeObjects("./files/Week1.csv");
+var arrayOfCategories = getCategories(mapOfProducts);
 var productNamesAndCategoryNames = getProductNamesAndCategoryNames(arrayOfCategories);
 
-var categoryNamesAndCategoryIds = {};
 var categoryNamesAndCategoryIDs = [];
-
 connection.query("SELECT * FROM Categories", function(err, Categories){
   if(err) return console.log(err);
 
   Categories.forEach(function(item){
-    categoryNamesAndCategoryIds[item.Category] = item.id;
     var result = {
       Category : item.Category,
       CategoryID : item.id
     }
     categoryNamesAndCategoryIDs.push(result);
   })
-  console.log(categoryNamesAndCategoryIds);
 
-  var theMap ={};
   var productNameAndCategoryID =[];
-  var values =[];
-  for(var i in productNamesAndCategoryNames){
-    for(var j in categoryNamesAndCategoryIds){
-      if(productNamesAndCategoryNames[i] == j){
+  productNamesAndCategoryNames.forEach(function(item){
+    categoryNamesAndCategoryIDs.forEach(function(item2){
+      if(item.Category == item2.Category){
         var result = {
-          Product : i,
-          CategoryID : categoryNamesAndCategoryIds[j]
+          Product : item.Product,
+          CategoryID : item2.CategoryID,
+          Date : item.Date,
+          Quantity : item.Quantity,
+          Price : item.Price
         }
         productNameAndCategoryID.push(result);
       }
-    }
-  }
-  console.log(productNameAndCategoryID);
+    })
+  });
 
+  var values =[];
   //Making a list of a LIST ----
   productNameAndCategoryID.forEach(function(item){
     var result = [
-      item.Product, item.CategoryID
+      item.Date, item.Product, item.Quantity, item.Price, item.CategoryID
     ]
     values.push(result);
-  });
+  })
 
-  connection.query("INSERT INTO Products (Product, CategoryID) VALUES ?", [values], function(err){
+  connection.query("INSERT INTO Products (Date, Product, Quantity, Price, CategoryID) VALUES ?", [values], function(err){
     if(err) throw err;
   });
 

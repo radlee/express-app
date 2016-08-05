@@ -12,74 +12,75 @@ module.exports = function(theList){
   //Categorizing-------------------------
   theList.forEach(function(item){
     if(item.Item == "Bananas - loose"){
-      var fuit = {Category : "Fruit", Item : item.Item};
+      var fuit = {Category : "Fruit", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price};
       categories.push(fuit);
     }
     else if(item.Item == "Apples - loose"){
-      var candy = {Category : "Fruit", Item : item.Item};
+      var candy = {Category : "Fruit", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price};
       categories.push(candy);
     }
     else if(item.Item == "Mixed Sweets 5s"){
-      var candy = {Category : "Candy", Item : item.Item}
+      var candy = {Category : "Candy", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(candy);
     }
     else if(item.Item == "Heart Chocolates"){
-      var candy = {Category : "Candy", Item : item.Item}
+      var candy = {Category : "Candy", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(candy);
     }
     else if(item.Item == "Coke 500ml"){
-      var drink = {Category : "CoolDrink", Item : item.Item}
+      var drink = {Category : "CoolDrink", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(drink);
     }
     else if(item.Item == "Fanta 500ml"){
-      var drink = {Category : "CoolDrink", Item : item.Item}
+      var drink = {Category : "CoolDrink", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(drink);
     }
     else if(item.Item == "Cream Soda 500ml"){
-      var drink = {Category : "CoolDrink", Item : item.Item}
+      var drink = {Category : "CoolDrink", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(drink);
     }
     else if(item.Item == "Amasi"){
-      var dairy = {Category : "Dairy", Item : item.Item}
+      var dairy = {Category : "Dairy", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(dairy);
     }
     else if(item.Item == "Milk 1l"){
-      var dairy = {Category : "Dairy", Item : item.Item}
+      var dairy = {Category : "Dairy", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(dairy);
     }
     else if(item.Item == "Gold Dish Vegetable Curry Can"){
-      var can = {Category : "Canned", Item : item.Item}
+      var can = {Category : "Canned", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(can);
     }
     else if(item.Item == "Chakalaka Can"){
-      var can = {Category : "Canned", Item : item.Item}
+      var can = {Category : "Canned", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(can);
     }
     else if(item.Item == "Valentine Cards"){
-      var gift = {Category : "Gifts", Item : item.Item}
+      var gift = {Category : "Gifts", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(gift);
     }
     else if(item.Item == "Rose (plastic)"){
-      var gift = {Category : "Gifts", Item : item.Item}
+      var gift = {Category : "Gifts", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(gift);
     }
     else if(item.Item == "Iwisa Pap 5kg"){
-      var food = {Category : "Food", Item : item.Item}
+      var food = {Category : "Food", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(food);
     }
     else if(item.Item == "Top Class Soy Mince"){
-      var food = {Category : "Food", Item : item.Item}
+      var food = {Category : "Food", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(food);
     }
     else if(item.Item == "Bread"){
-      totalBakery += item.Item
+      var food = {Category : "Food", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
+      categories.push(food);
     }
     else if(item.Item == "Soap Bar"){
-      var beauty = {Category : "Beauty", Item : item.Item}
+      var beauty = {Category : "Beauty", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(beauty);
     }
     else if(item.Item == "Shampoo 1 litre"){
-      var beauty = {Category : "Beauty", Item : item.Item}
+      var beauty = {Category : "Beauty", Item : item.Item, Date : item.Date, Quantity : item.Quantity, Price : item.Price}
       categories.push(beauty);
     }
   });
