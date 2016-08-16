@@ -36,23 +36,38 @@ connection.query("SELECT * FROM Categories", function(err, Categories){
           CategoryID : item2.CategoryID,
           Date : item.Date,
           Quantity : item.Quantity,
-          Price : item.Price
+          Price : item.Price.replace(/R/g, "")
         }
         productNameAndCategoryID.push(result);
       }
     })
   });
 
-  var values =[];
-  //Making a list of a LIST ----
+  var mapOfProductAndCategoryID = [];
+  var checkDuplicates = {};
   productNameAndCategoryID.forEach(function(item){
+    if(checkDuplicates[item.Product] == undefined){
+      checkDuplicates[item.Product] = "";
+    }
+    checkDuplicates[item.Product] = item.CategoryID;
+  });
+
+  for(var key in checkDuplicates){
+    var result = {
+      Product : key,
+      CategoryID : checkDuplicates[key]
+    }
+    mapOfProductAndCategoryID.push(result);
+  }
+  var values =[];
+  mapOfProductAndCategoryID.forEach(function(item){
     var result = [
-      item.Date, item.Product, item.Quantity, item.Price, item.CategoryID
+      item.Product, item.CategoryID
     ]
     values.push(result);
   })
 
-  connection.query("INSERT INTO Products (Date, Product, Quantity, Price, CategoryID) VALUES ?", [values], function(err){
+  connection.query("INSERT INTO Products (Product, CategoryID) VALUES ?", [values], function(err){
     if(err) throw err;
   });
 

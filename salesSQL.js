@@ -10,34 +10,73 @@ var connection = mysql.createConnection({
   password : "Leander247365",
   database : "Nelisa"
 });
-//A map and a list of Objects -------------------------------------------------
-var productNamesAndProductIds = {};
+//connection.connect()
+var mapOfProducts = readAndMakeObjects("./files/Week1.csv");
+var arrayOfCategories = getCategories(mapOfProducts);
+var productNamesAndCategoryNames = getProductNamesAndCategoryNames(arrayOfCategories);
+
 var productNamesAndProductIDs = [];
 connection.query("SELECT * FROM Products", function(err, Products){
     if(err) return console.log(err);
+
     Products.forEach(function(item){
-      productNamesAndProductIds[item.Product] = item.id;
       var result = {
         Product : item.Product,
         ProductID : item.id
       }
       productNamesAndProductIDs.push(result);
     });
-    // console.log(productNamesAndProductIds);
+
+    var salesStats =[];
+    productNamesAndCategoryNames.forEach(function(item){
+      productNamesAndProductIDs.forEach(function(item2){
+        if(item.Product == item2.Product){
+          var result = {
+            ProductName : item.Product,
+            ProductID : item2.ProductID,
+            SaleDate : item.Date,
+            Quantity : item.Quantity,
+            Price : item.Price.replace(/R/g, "")
+          }
+          salesStats.push(result);
+        }
+      })
+    });
+    var checkDuplicates = {};
+    var mapOfProductsAndProductID = [];
+    salesStats.forEach(function(item){
+      if(checkDuplicates[item.ProductName] == undefined){
+        checkDuplicates[item.ProductName] = "";
+      }
+      checkDuplicates[item.ProductName] = item.ProductID;
+      mapOfProductsAndProductID.push({
+        // ProductName : item.ProductName,
+        ProductID : item.ProductID,
+        SaleDate : item.SaleDate,
+        Quantity : item.Quantity,
+        Price : item.Price
+      });
+    });
+
+    // var mapOfProductsAndProductID = [];
+    // for(var key in checkDuplicates){
+    //   var result = {
+    //     ProductName : key,
+    //     ProductID : checkDuplicates[key]
+    //   }
+    //   mapOfProductsAndProductID.push(result);
+    // }
 
     var values = [];
-    productNamesAndProductIDs.forEach(function(item){
+  mapOfProductsAndProductID.forEach(function(item){
       var result =[
-        item.Product, item.ProductID
+        item.SaleDate, item.Quantity, item.Price, item.ProductID
       ]
       values.push(result)
     });
 
-    console.log(values);
 
-    values = [[ '12/May/2016','Milk 1l', 1, 2, 21.00 ]]
-
-    connection.query("INSERT INTO Sales (SaleDate, ProductName, ProductID, Quantity, Price) VALUES ?", [values], function(err){
+    connection.query("INSERT INTO Sales (Date, Quantity, Price, ProductID) VALUES ?", [values], function(err){
         if(err) throw err;
       });
       connection.query("SELECT * FROM Sales", function(err, result){
@@ -45,7 +84,6 @@ connection.query("SELECT * FROM Products", function(err, Products){
           console.log(err);
           return;
         }
-        // console.log(result);
       });
       connection.end();
     });

@@ -49,6 +49,9 @@ app.get('/sales/:week_name', function(req, res){
   var data = weeklyStats(weeklyFile, "./files/purchases.csv");
     res.render( "weeklyStats", {key : data , week : weekname});
 });
+// app.get('/productsSQL', function(req, res){
+//     res.render( "weeklyStats", {key : data , week : weekname});
+// });
 //start the server
 var port = process.env.PORT || 5000;
 var server = app.listen(port, function () {
@@ -56,19 +59,3 @@ var server = app.listen(port, function () {
  var port = server.address().port;
  console.log('App listening at http://%s:%s', host, port);
 });
-// connection.query(sql, [values], function(err){
-//   if(err) throw err;
-//   connection.end();
-// });
-
-
-
-//
-// var query = connection.query("SELECT * FROM Categories", function(err, result){
-//   if(err){
-//     console.log(err);
-//     return;
-//   }
-//   console.log(result);
-// });
-// https://www.sitepoint.com/using-node-mysql-javascript-client/
