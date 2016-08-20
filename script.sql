@@ -36,7 +36,6 @@ CREATE TABLE Purchases(
   Date char(50) NOT NULL,
   Quantity INT,
   CostPerItem DECIMAL(4,2) NOT NULL,
-  TotalCost DECIMAL(4,2) NOT NULL,
   ProductID INT,
   FOREIGN KEY (ProductID) REFERENCES Products (id)
 );
